@@ -1,0 +1,269 @@
+# Path to your oh-my-zsh installation.
+  export ZSH=/home/ehz/.oh-my-zsh
+
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="robbyrussell"
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git man)
+
+# User configuration
+
+  export PATH="/home/ehz/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export MANPATH="/usr/local/man:$MANPATH"
+
+source $ZSH/oh-my-zsh.sh
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+# export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+
+
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+export CC=clang
+export CFLAGS="-ggdb3 -O0 -std=c11 -Wall -Werror -pedantic-errors"
+export LDLIBS="-lcs50 -lm"
+
+# configure clang++
+export CXX=clang++
+export CXXFLAGS="-ggdb3 -O0 -std=c++14 -stdlib=libc++ -lc++abi -Werror -Wself-assign -Wall -pedantic-errors -Wextra-tokens -Wambiguous-member-template -Wbind-to-temporary-copy -fdiagnostics-print-source-range-info -fdiagnostics-show-template-tree -ferror-limit=33 -ftemplate-backtrace-limit=13 -lpthread -l:libmagic.so.1"
+
+function reSetting()
+{
+# c11
+export CC=clang
+export CFLAGS="-ggdb3 -O0 -std=c11 -Wall -Werror -pedantic-errors"
+export LDLIBS="-lcs50 -lm"
+
+# configure clang++
+export CXX=clang++
+export CXXFLAGS="-ggdb3 -O0 -std=c++14 -stdlib=libc++ -lc++abi -Werror -Wself-assign -Wall -pedantic-errors -Wextra-tokens -Wambiguous-member-template -Wbind-to-temporary-copy -fdiagnostics-print-source-range-info -fdiagnostics-show-template-tree -ferror-limit=33 -ftemplate-backtrace-limit=13 -lpthread -l:libmagic.so.1"
+}
+
+function defaultSetting()
+{
+# default setting
+export CC=gcc
+export CXX=g++
+unset CFLAGS
+unset LDLIBS
+unset CXXFLAGS
+}
+
+function unSetting()
+{
+    unset CC
+    unset CFLAGS
+    unset LDLIBS
+    unset CXX
+    unset CXXFLAGS
+}
+
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+
+# color for vim script
+
+[[ $TMUX = "" ]] && export TERM="xterm-256color"
+
+PATH=$PATH:~/.local/bin
+
+
+source ~/.zprofile
+
+# alias for clang toolchain
+# Make sure to run mkdir     "${HOME}/.npm-packages"
+
+
+NPM_PACKAGES="${HOME}/.npm-packages"
+
+PATH="$NPM_PACKAGES/bin:$PATH"
+
+# Unset manpath so we can inherit from /etc/manpath via the `manpath` command
+unset MANPATH # delete if you already modified MANPATH elsewhere in your config
+export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+
+
+alias mysql='mysql -u root -p'
+
+alias clang-format='clang-format-3.6'
+
+alias cxx="clang++ -ggdb3 -O0 -std=c++14 -stdlib=libc++ -lc++abi -Werror -Wself-assign -Wall -pedantic-errors -Wextra-tokens -Wambiguous-member-template -Wbind-to-temporary-copy -fdiagnostics-print-source-range-info -fdiagnostics-show-template-tree -ferror-limit=33 -ftemplate-backtrace-limit=13 -lpthread -l:libmagic.so.1"
+
+alias ccc="clang -ggdb3 -O0 -std=c11 -Wall -Werror -pedantic-errors"
+
+# gcc or g++ compiler
+alias gcc="gcc -O0 -g -std=c11 -Wall -Wextra -Wshadow -pedantic -Werror"
+# for effective C++ optimization
+# Sqlite3 for c++ support
+# alias gxx="g++ -O0 -g -std=c++14 -Wall -Wextra -Wshadow -pedantic -Weffc++ -fdiagnostics-color=always -l sqlite3"
+alias gxx="g++ -O0 -g -std=c++14 -Wall -Wextra -Wshadow -pedantic -Weffc++ -fdiagnostics-color=always"
+
+# Custom aliases folder dir
+alias author="cd ~/Dropbox/FUNProgramming/ehz_notebook"
+alias github="cd ~/Dropbox/FUNProgramming/"
+# alias apublic="cd ~/vhosts/localhost/public/"
+alias metacpp="cd ~/Dropbox/metadata/cppDeitel/Code_Examples"
+alias free="free -h"
+
+alias sag="sudo apt-get"
+alias update50="pullall"
+
+# my nootbook
+alias ehz="vim ~/Dropbox/FUNProgramming/ehz_notebook/ehzNOTEBOOK.txt"
+
+# My aliases
+alias sqlite="sqlite3"
+alias v="vim"
+alias t="tmux"
+alias vinp="vim --noplugin"
+alias vinn="vim -u NONE"
+alias c="clear"
+
+# Updating process
+alias update='sudo apt-get update'
+alias upgrade='sudo apt-get upgrade'
+alias dist-upgrade='sudo apt-get dist-upgrade'
+
+# all at once
+alias pullall='update ; upgrade ; time dist-upgrade -y ; vim -c PluginUpdate'
+alias housekeeping='sudo apt-get autoclean && sudo apt-get autoremove'
+
+# git command aliases
+alias gita="git add"
+alias gitc="git commit"
+alias gits="git status"
+alias gitl="git log"
+alias gitush="git push origin master"
+alias gitull="git pull origin master"
+
+
+
+ # set umask
+umask 0077
+
+# configure man
+export MANSECT="3,2,1"
+
+# Warning...Can cause trouble when compile system software
+
+# protect user
+alias cp="cp -i"
+alias mv="mv -i"
+alias rm="rm -i"
+
+# convenience
+alias ll="ls -l --color=auto"
+alias gdb="gdb -q"
+
+# allow core dumps
+ulimit -c unlimited
+
+# set editor
+export EDITOR=vim
+
+
+export CLASSPATH=.:/usr/lib/spl.jar
+
+bindkey '\e[A' history-beginning-search-backward
+bindkey '\e[B' history-beginning-search-forward
+
+set blink-matching-paren on
+# Make sure to make .virtualenvs
+
+export PIP_VIRTUALENV_BASE=/home/ehz/.virtualenvs
+
+
+# fucking shit
+stty -ixon
+
+# to update npm

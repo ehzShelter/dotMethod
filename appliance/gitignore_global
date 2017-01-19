@@ -1,0 +1,62 @@
+.hgignore
+node_module
+.DS_Store
+Thumbs.db
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+*.session.vim
+*.plist
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# CMAKEfile ignores
+install_manifest.txt
+CMakeCache.txt
+CMakeFiles
+cmake_install.cmake
+
+# Python
+*.py[cod]
+.installed.cfg
+__pycache__
+pip-log.txt
+.coverage
+.tox
+nosetests.xml
+
+# Extra in gitignore
+*.swp
+*.swo
+.DS_Store
+._*
+tags
+tags.temp
+*.pyc
+bin/stubs
+.bundle
+.vagrant

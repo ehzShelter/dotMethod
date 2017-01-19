@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# run dropbox deamon
+
+bash -c 'export DBUS_SESSION_BUS_ADDRESS="" && dropbox start -i'

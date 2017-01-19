@@ -1,0 +1,23 @@
+{
+    "ecmaVersion": 6,
+        "libs": [
+            "browser",
+            "jquery",
+            "underscore"
+        ],
+        "loadEagerly": [
+            "react",
+            "react-dom",
+            "immutable"
+        ],
+        "plugins": {
+            "complete_strings": {},
+            "node": {},
+            "requirejs": {},
+            "modules": {},
+            "es_modules": {},
+            "doc_comment": {
+                "fullDocs": true
+            }
+        }
+}
