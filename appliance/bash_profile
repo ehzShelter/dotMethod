@@ -1029,3 +1029,57 @@ sourceListPermission(){
 }
 
 alias sqlite='sqlite3'
+
+# Gives the current user ownership of the current file
+# gimme file.txt
+function gimme {
+  chown `whoami` $1
+}
+
+
+# Clears the screen and adds a blank buffer on top to help you visualize.
+function cleanse {
+  clear && clear
+}
+
+# lists all the people who have contributed to a git repo
+alias contributors="git log --format='%aN' | sort -u"
+
+
+# Prints out your most-used commands
+function halloffame {
+  history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head -15
+}
+
+
+# opens http://localhost:{port}
+function localhost {
+  open http://localhost:$1
+}
+
+# Sends a packet to the given website and traces its route
+# journey www.harvard.edu
+function journey {
+  traceroute -q 1 $1
+}
+
+
+# moves all the files contained in subfolders of the current folder into the base level of this folder,
+# emptying all subdirectories.
+function flatten {
+  find ./ -mindepth 2 -type f -exec mv -n '{}' ./ ';'
+}
+
+# searches for files with the given string in their names
+# fname "controller"
+function fname {
+  find . -regex ".*$1.*"
+}
+
+# recursively changes the permissions of every file in
+# the current directory to 0644 and every directory to
+# 0755.
+function fixperms {
+  find ./ -type d -exec chmod 755 {} \;
+  find ./ -type f -exec chmod 644 {} \;
+}

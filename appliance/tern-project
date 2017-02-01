@@ -3,7 +3,9 @@
         "libs": [
             "browser",
             "jquery",
-            "underscore"
+            "underscore",
+            "react",
+            "react-dom",
         ],
         "loadEagerly": [
             "react",
