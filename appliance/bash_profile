@@ -86,8 +86,8 @@ export GRADLE_HOME=~/.myGradle
 export PATH=$GRADLE_HOME/bin:$PATH
 
 
-alias YCMbuild='~/.vim/plugged/YouCompleteMe/install.py'
-alias YCMbuildCCJS='~/.vim/plugged/YouCompleteMe/install.py --clang-completer --tern-completer'
+# alias YCMbuild='~/.vim/plugged/YouCompleteMe/install.py'
+# alias YCMbuildCCJS='~/.vim/plugged/YouCompleteMe/install.py --clang-completer --tern-completer'
 
 # to work with you may need to change eslintrc
 # make sure to install all the modules
