@@ -2,7 +2,7 @@
 ## Tested on Xubuntu Xfce
 ## this is . dot files for productivity
 
-    bash < <(curl --silent https://raw.githubusercontent.com/ehzShelter/dotMethod/master/appliance/install.sh)
+    bash < <(curl --silent https://raw.githubusercontent.com/ehzawad/dotMethod/master/appliance/install.sh)
 
 ## Android
 
