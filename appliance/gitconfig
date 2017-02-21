@@ -1,6 +1,6 @@
 [user]
-    email = emrulhasanzawad@outlook.com
-    name = ehzShelter
+    email = ehzawad@gmail.com
+    name = ehzawad
 [push]
     default = simple
 [core]
@@ -10,7 +10,7 @@
 [color]
     ui = true
 [github]
-    user = ehzShelter
+    user = ehzawad
 [credential]
     helper = cache
 [help]
