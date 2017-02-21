@@ -975,19 +975,13 @@ unset MANPATH
 export MANPATH="$RUBY_HOME/share/man:$(manpath)"
 
 
+export PYTHON_CONFIGURE_OPTS="--enable-shared"
 pythonBuild() {
-  echo please provide youe install dir
-  echo you are already in $PWD directory
-  read MYDIR
-  export DIR=$HOME/$MYDIR
-  echo $DIR
-  sudo apt-get build-dep python3.5
-  # export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu:/usr/lib
-  ./configure --prefix=$DIR
-  # ./configure --prefix=$DIR
+  # sudo apt-get build-dep python3.6-dev
+
+  ./configure --prefix=$HOME/.myPython --enable-shared
   make
   make install
-
 }
 
 
