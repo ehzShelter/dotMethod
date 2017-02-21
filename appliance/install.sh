@@ -2,7 +2,7 @@
 
 set -e
 
-echo This bash script will download and install the vim from http://github.com/ehzShelter/dotMethod.
+echo This bash script will download and install the vim from http://github.com/ehzawad/dotMethod.
 read -p "Is that okay? [Yn] " confirm
 
 # Transform to lower case
@@ -24,7 +24,7 @@ then
     rm -rf ~/.dotMethod
 fi
 
-git clone https://github.com/ehzShelter/dotMethod.git ~/.dotMethod
+git clone https://github.com/ehzawad/dotMethod.git ~/.dotMethod
 echo Downloaded
 
 # cd ~/.dotMethod/appliance/
