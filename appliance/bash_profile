@@ -1077,3 +1077,8 @@ function fixperms {
   find ./ -type d -exec chmod 755 {} \;
   find ./ -type f -exec chmod 644 {} \;
 }
+
+function myPublicIP() {
+  myip="$(dig +short myip.opendns.com @resolver1.opendns.com)"
+  echo "My WAN/Public IP address: ${myip}"
+}
