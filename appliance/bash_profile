@@ -104,10 +104,10 @@ export GHC_HOME=~/.cabal
 export PATH=$GHC_HOME/bin:$PATH
 
 # Apache2 web server
-export apacheRestart="sudo service apache2 restart"
-export apacheConfig="sudoedit /etc/apache2/apache2.conf"
+alias apacheRestart="sudo service apache2 restart"
+alias apacheConfig="sudoedit /etc/apache2/apache2.conf"
 
-export fuck="sudo"
+alias fuck="sudo"
 
 ## Hail yaa
 ## mkdir -p ~/.fonts/
@@ -985,7 +985,7 @@ pythonBuild() {
 }
 
 
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu:/usr/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu:/usr/lib:/usr/local/lib:/home/hell/.myPython/lib:/home/hell/.myClang/lib
 
 alias pip='pip3'
 # the following code to your ~/.pip/pip.conf to avoid the warning.
@@ -1081,4 +1081,13 @@ function fixperms {
 function myPublicIP() {
   myip="$(dig +short myip.opendns.com @resolver1.opendns.com)"
   echo "My WAN/Public IP address: ${myip}"
+}
+
+pureClang() {
+  asshole
+  export CC=clang
+  export CXX=clang++
+  echo $CC
+  echo $CXX
+  echo $CXXFLAGS
 }
