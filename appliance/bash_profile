@@ -1091,3 +1091,7 @@ pureClang() {
   echo $CXX
   echo $CXXFLAGS
 }
+
+piAddress(){
+  cat /var/lib/misc/dnsmasq.leases
+}
