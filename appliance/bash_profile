@@ -379,7 +379,7 @@ alias upgrade='sudo apt-get upgrade'
 # all at once
 alias pullall='update ; upgrade'
 alias pullvim='vim -c PlugUpgrade +PlugUpdate'
-alias myUpdate='pullall -y ; vim -c PlugUpdate +q +q'
+alias myUpdate='asshole; pullall -y ; vim -c PlugUpdate +q +q'
 alias housekeeping='sudo apt-get autoclean && sudo apt-get autoremove'
 
 # git command aliases
