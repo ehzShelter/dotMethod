@@ -1,9 +1,13 @@
 {
   "ecmaVersion": 7,
   "libs": [
-    "browser"
+    "browser",
+    "react",
+    "react-dom"
   ],
   "plugins": {
+    "es_modules": {},
+    "node": {},
     "doc_comment": {
       "fullDocs": true,
       "strong": true
