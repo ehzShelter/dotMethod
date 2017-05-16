@@ -48,5 +48,3 @@ set convert-meta on
 
 # There may be major change in bash 5
 # for more see  www.gnu.org
-
-bind 'set-enable-bracketed-paste off'
