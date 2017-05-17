@@ -1095,3 +1095,22 @@ pureClang() {
 piAddress(){
   cat /var/lib/misc/dnsmasq.leases
 }
+
+firmwareUpdate(){
+  cd
+
+  wget https://01.org/sites/default/files/downloads/intelr-graphics-linux/kbldmcver101.tar.bz2 && \
+    tar xjvf kbldmcver101.tar.bz2 && cd kbl_dmc_ver1_01/ && sudo ./install.sh
+
+  cd
+
+  sudo update-initramfs -u -k all
+}
+
+# Download SDK platform tools
+# remember to extract that and
+# mv platform-tools ~/.platform-tools
+# https://developer.android.com/studio/releases/platform-tools.html
+# AndroidOS Factory Setting
+export ADB_HOME=~/.platform-tools
+export PATH=$ADB_HOME:$PATH
