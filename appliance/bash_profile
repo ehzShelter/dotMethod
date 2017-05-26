@@ -1114,3 +1114,9 @@ firmwareUpdate(){
 # AndroidOS Factory Setting
 export ADB_HOME=~/.platform-tools
 export PATH=$ADB_HOME:$PATH
+
+# Android SDK command line tools,
+# requires for React-native etc
+export ANDROID_HOME=${HOME}/Android/Sdk
+export PATH=${PATH}:${ANDROID_HOME}/tools
+export PATH=${PATH}:${ANDROID_HOME}/platform-tools
