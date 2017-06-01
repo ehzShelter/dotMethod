@@ -874,6 +874,8 @@ spotifyInstall()
 
   # 2. Add the Spotify repository
   echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
+  # correct the permission
+  sudo chmod a+r /etc/apt/sources.list.d/spotify.list
 
   # 3. Update list of available packages
   sudo apt-get update
@@ -883,6 +885,7 @@ spotifyInstall()
 
   # remove prev cache
   rm -rf ~/.cache/spotify/*
+
 }
 
 currentStatePID()
