@@ -1128,3 +1128,11 @@ export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 myBluetooth() {
     python3 ~/.dotMethod/bluetooth.py
 }
+
+ecmaEnvSet() {
+  echo $PWD
+  yarn add babel-cli babel-preset-env
+  echo '{ "presets": ["env"] }' > .babelrc
+}
+
+export TERM=xterm
