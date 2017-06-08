@@ -76,8 +76,9 @@ svnclean() { find . -name .svn -exec rm -vrf {} +; }
 termreset() { echo -ne "\033]0;Terminal\007"; }
 
 # useful for NODEJS
-alias npu='npm update -g'
+alias npu='npm install -g npm'
 alias npc='npm outdated -g --depth=0'
+alias npmAll='npu;npc'
 
 # build tool gradle
 
