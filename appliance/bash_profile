@@ -1125,6 +1125,8 @@ export ANDROID_HOME=${HOME}/Android/Sdk
 export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 
+export ANDROID_STUDIO=${HOME}/.myAndroidStudio
+export PATH=$ANDROID_STUDIO/bin:$PATH
 
 myBluetooth() {
     python3 ~/.dotMethod/bluetooth.py
