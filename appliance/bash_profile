@@ -621,6 +621,9 @@ export MANPATH="$LLVMCLANG/share/man:$(manpath)"
 ## GO dev
 export GOROOT=$HOME/.myGo
 export PATH=$PATH:$GOROOT/bin
+export GOPATH=$HOME/go
+
+## GoPATH env variable
 
 ## Cmake
 export CMAKE_HOME=~/.cmake
