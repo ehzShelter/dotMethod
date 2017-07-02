@@ -35,6 +35,12 @@ Thanks to:
 Change Log
 ----------
 
+- 0.5.2
+  * Optimizing waits.
+
+- 0.5.1
+  * Increasing WAIT_TIME and TRIES
+
 - 0.5.0
   * Autodetect & autorun service
 
@@ -82,7 +88,7 @@ import subprocess as sb
 import argparse
 
 
-__version__ = '0.4.0'
+__version__ = '0.5.1'
 
 
 HEX_DIGIT_PATTERN = '[0-9A-F]'
@@ -90,8 +96,8 @@ HEX_BYTE_PATTERN = '%s{2}' % HEX_DIGIT_PATTERN
 MAC_ADDRESS_PATTERN = ':'.join((HEX_BYTE_PATTERN, ) * 6)
 DEVICE_PATTERN = re.compile('^(?:.*\s)?Device\s(?P<mac>%s)\s(?P<name>.*)' % MAC_ADDRESS_PATTERN)
 CONTROLLER_PATTERN = re.compile('^(?:.*\s)?Controller\s(?P<mac>%s)\s(?P<name>.*)' % MAC_ADDRESS_PATTERN)
-WAIT_TIME = .75
-TRIES = 4
+WAIT_TIME = 2.25
+TRIES = 7
 PROFILE = 'a2dp'
 
 
@@ -231,8 +237,8 @@ class BluetoothctlProtocol(asyncio.SubprocessProtocol):
         return devices[0 if not selected.strip() else (int(selected) - 1)]
 
 
-async def wait():
-    return await asyncio.sleep(WAIT_TIME)
+async def wait(delay=None):
+    return await asyncio.sleep(WAIT_TIME or delay)
 
 
 async def execute_command(cmd, ignore_fail=False):
@@ -359,6 +365,7 @@ async def main(args):
         device_id = await find_dev_id(mac)
         print('Device ID: %s' % device_id)
 
+        await wait(2)
         await set_profile(device_id, args.profile)
         await set_default_sink(sink)
         await move_streams_to_sink(sink)
