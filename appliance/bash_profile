@@ -1146,3 +1146,6 @@ export TERM=xterm
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/hell/.sdkman"
 [[ -s "/home/hell/.sdkman/bin/sdkman-init.sh" ]] && source "/home/hell/.sdkman/bin/sdkman-init.sh"
+
+
+alias setvscode="vim $HOME/.config/Code/User/settings.json"
