@@ -10,7 +10,7 @@ alias node="env NODE_NO_READLINE=1 rlwrap node"
 
 # SAmple command
 # clang-check -analyze hell.cpp --
-alias analyzeCC='clang++ --analyze -std=c++14 -lc++abi -latomic -Xanalyzer -analyzer-output=text -fcolor-diagnostics'
+alias analyzeCC='clang++ --analyze -std=c++17 -lc++abi -latomic -Xanalyzer -analyzer-output=text -fcolor-diagnostics'
 alias analyzeC='clang --analyze -std=c11 -latomic -Xanalyzer -analyzer-output=text -fcolor-diagnostics'
 
 # valgrind check added
@@ -20,16 +20,16 @@ alias asshole='unSetting ; defaultSetting'
 alias mysql='mysql -u root -p'
 
 
-alias cxx="clang++ -ggdb3 -O0 -std=c++14 -stdlib=libc++ -lc++abi -latomic -ldl -Werror -Wself-assign -pedantic-errors -Wextra-tokens -Wambiguous-member-template -Wbind-to-temporary-copy -fdiagnostics-print-source-range-info -fcolor-diagnostics -fdiagnostics-show-template-tree -ferror-limit=33 -ftemplate-backtrace-limit=13 -lpthread -l:libmagic.so.1"
+alias cxx="clang++ -ggdb3 -O0 -std=c++17 -stdlib=libc++ -lc++abi -latomic -ldl -Werror -Wself-assign -pedantic-errors -Wextra-tokens -Wambiguous-member-template -Wbind-to-temporary-copy -fdiagnostics-print-source-range-info -fcolor-diagnostics -fdiagnostics-show-template-tree -ferror-limit=33 -ftemplate-backtrace-limit=13 -lpthread -l:libmagic.so.1"
 
-alias cxxMinimal="clang++ -ggdb3 -O0 -std=c++14 -stdlib=libc++ -lc++abi -ldl -latomic -lpthread"
+alias cxxMinimal="clang++ -ggdb3 -O0 -std=c++17 -stdlib=libc++ -lc++abi -ldl -latomic -lpthread"
 
 alias ccc="clang -ggdb3 -O0 -std=c11 -lm -ldl -lpthread -latomic -fcolor-diagnostics"
 
 # gcc or g++ compiler
 alias gcc="gcc -O0 -g -std=c11 -lm -ldl -lpthread -lcrypto -latomic -Wextra -Wshadow -Werror"
 # for effective C++ optimization
-alias gxx="g++ -O0 -g -std=c++14 -ldl -lpthread -lm -latomic -Wextra -Wshadow -pedantic"
+alias gxx="g++ -O0 -g -std=c++17 -ldl -lpthread -lm -latomic -Wextra -Wshadow -pedantic"
 
 alias ompC="ccc -fopenmp -pthread"
 alias ompCC="cxx -fopenmp -pthread"
@@ -38,7 +38,7 @@ alias ompCC="cxx -fopenmp -pthread"
 # configure clang++
 # -lcrypto will be necessary some time
 export CXX=clang++
-export CXXFLAGS="-ggdb3 -O0 -std=c++14 -stdlib=libc++ -lc++abi -lm -ldl -latomic -Werror -Wself-assign -pedantic-errors -Wextra-tokens -Wambiguous-member-template -Wbind-to-temporary-copy -fdiagnostics-print-source-range-info -fcolor-diagnostics -fdiagnostics-show-template-tree -ferror-limit=33 -ftemplate-backtrace-limit=13 -lpthread -l:libmagic.so.1"
+export CXXFLAGS="-ggdb3 -O0 -std=c++17 -stdlib=libc++ -lc++abi -lm -ldl -latomic -Werror -Wself-assign -pedantic-errors -Wextra-tokens -Wambiguous-member-template -Wbind-to-temporary-copy -fdiagnostics-print-source-range-info -fcolor-diagnostics -fdiagnostics-show-template-tree -ferror-limit=33 -ftemplate-backtrace-limit=13 -lpthread -l:libmagic.so.1"
 
 function reSetting()
 {
@@ -48,7 +48,7 @@ function reSetting()
 
   # configure clang++
   export CXX=clang++
-  export CXXFLAGS="-ggdb3 -O0 -std=c++14 -lc++abi -lm -lpthread -Werror -Wself-assign -Wall -pedantic-errors -Wextra-tokens -Wambiguous-member-template -Wbind-to-temporary-copy -fdiagnostics-print-source-range-info -fdiagnostics-show-template-tree -fcolor-diagnostics -ferror-limit=33 -ftemplate-backtrace-limit=13 -lpthread -l:libmagic.so.1"
+  export CXXFLAGS="-ggdb3 -O0 -std=c++17 -lc++abi -lm -lpthread -Werror -Wself-assign -Wall -pedantic-errors -Wextra-tokens -Wambiguous-member-template -Wbind-to-temporary-copy -fdiagnostics-print-source-range-info -fdiagnostics-show-template-tree -fcolor-diagnostics -ferror-limit=33 -ftemplate-backtrace-limit=13 -lpthread -l:libmagic.so.1"
 }
 
 function defaultSetting()
@@ -1149,3 +1149,7 @@ export SDKMAN_DIR="/home/hell/.sdkman"
 
 
 alias setvscode="vim $HOME/.config/Code/User/settings.json"
+
+
+export PacketTracer_HOME=~/.myJava
+export PATH=$JAVA_HOME/bin:$PATH
