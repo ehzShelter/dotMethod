@@ -918,7 +918,7 @@ export PATH=$RUST_PAC/bin:$PATH
 # http://stackoverflow.com/questions/17420994/bash-regex-match-string
 # edited by zawad110016@acc.edu.bd
 
-extract () {
+myextract () {
   if [ -f $1 ] ; then
     case $1 in
       *.tar.bz2)   tar xvjf $1    ;;
