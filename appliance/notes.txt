@@ -4,3 +4,6 @@ sudo a2dissite 000-default
 sudo a2ensite mywebprojects
 # reference for creating vhost
 http://askubuntu.com/questions/19898/whats-the-simplest-way-to-edit-and-add-files-to-var-www
+
+sudo a2dismod mpm_event
+sudo a2enmod mpm_prefork
