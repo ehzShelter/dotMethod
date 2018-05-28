@@ -1143,6 +1143,7 @@ ecmaEnvSet() {
 
 openGLMan() {
 sudo apt install g++ clang
+sudo apt install libglfw3-dev
 sudo apt-get install libc++-dev
 sudo apt install freeglut3 freeglut3-dev binutils binutils-dev g++ cmake libglew-dev mesa-common-dev build-essential libglew2.0 libglew-dev libglm-dev mesa-utils-extra
 }
