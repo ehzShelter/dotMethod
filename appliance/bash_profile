@@ -984,7 +984,7 @@ export MANPATH="$RUBY_HOME/share/man:$(manpath)"
 
 export PYTHON_CONFIGURE_OPTS="--enable-shared"
 pythonBuild() {
-  # sudo apt-get build-dep python3.6-dev
+  sudo apt-get build-dep python3.6
 
   ./configure --prefix=$HOME/.myPython --enable-shared
   make
@@ -1161,3 +1161,17 @@ alias setvscode="vim $HOME/.config/Code/User/settings.json"
 
 export PacketTracer_HOME=~/.myJava
 export PATH=$JAVA_HOME/bin:$PATH
+
+
+# clang LLVM
+export OPENGL=~/.myOpengl
+
+export PATH=~/.myOpengl/bin:$PATH
+
+export CPATH=~/.myOpengl/include
+# On Mac OS X, replace LD_LIBRARY_PATH with DYLD_LIBRARY_PATH
+export LD_LIBRARY_PATH=~/.myOpengl/lib
+
+export LIBRARY_PATH=~/.myOpengl/lib
+
+export CPLUS_INCLUDE_PATH=~/.myOpengl/include
