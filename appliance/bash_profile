@@ -1175,3 +1175,7 @@ export LD_LIBRARY_PATH=~/.myOpengl/lib
 export LIBRARY_PATH=~/.myOpengl/lib
 
 export CPLUS_INCLUDE_PATH=~/.myOpengl/include
+
+
+export MONGO_HOME=~/.myMongo
+export PATH=$MONGO_HOME/bin:$PATH
