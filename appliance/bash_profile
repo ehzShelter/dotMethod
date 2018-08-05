@@ -38,7 +38,7 @@ alias ompCC="cxx -fopenmp -pthread"
 # configure clang++
 # -lcrypto will be necessary some time
 export CXX=clang++
-export CXXFLAGS="-ggdb3 -O0 -std=c++17 -lc++abi -lm -ldl -latomic -lglut -lglfw -lX11 -lGL -lGLEW -lGLU -lsfml-graphics -lsfml-window -lsfml-system -Werror -Wself-assign -pedantic-errors -Wextra-tokens -Wambiguous-member-template -Wbind-to-temporary-copy -fdiagnostics-print-source-range-info -fcolor-diagnostics -fdiagnostics-show-template-tree -ferror-limit=33 -ftemplate-backtrace-limit=13 -lpthread -l:libmagic.so.1"
+export CXXFLAGS="-ggdb3 -O0 -std=c++17 -lc++abi -lm -ldl -latomic -lglut -lglfw -lX11 -lGL -lGLEW -lGLU -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -Werror -Wself-assign -pedantic-errors -Wextra-tokens -Wambiguous-member-template -Wbind-to-temporary-copy -fdiagnostics-print-source-range-info -fcolor-diagnostics -fdiagnostics-show-template-tree -ferror-limit=33 -ftemplate-backtrace-limit=13 -lpthread -l:libmagic.so.1"
 
 function reSetting()
 {
