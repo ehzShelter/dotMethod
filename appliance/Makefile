@@ -10,7 +10,7 @@ CXX = clang++
 # CXXFLAGS = -ggdb3 -O0 -std=c++14 -stdlib=libc++ -Wall -Werror -pedantic-errors
 #
 #
-CXXFLAGS = -ggdb3 -O0 -std=c++17 -stdlib=libc++ -Werror -Wself-assign -pedantic-errors -Wextra-tokens -Wambiguous-member-template -Wbind-to-temporary-copy -fdiagnostics-print-source-range-info -fcolor-diagnostics -fdiagnostics-show-template-tree -ferror-limit=33 -ftemplate-backtrace-limit=13
+CXXFLAGS = -ggdb3 -O0 -std=c++17 -Werror -Wself-assign -pedantic-errors -Wextra-tokens -Wambiguous-member-template -Wbind-to-temporary-copy -fdiagnostics-print-source-range-info -fcolor-diagnostics -fdiagnostics-show-template-tree -ferror-limit=33 -ftemplate-backtrace-limit=13
 
 # flags for the CPP  PreProcessor
 CPPFLAGS =
