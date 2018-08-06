@@ -7,10 +7,11 @@
 CXX = clang++
 
 # flags to pass compiler
-# CXXFLAGS = -ggdb3 -O0 -std=c++14 -stdlib=libc++ -Wall -Werror -pedantic-errors
 #
 #
-CXXFLAGS = -ggdb3 -O0 -std=c++17 -Werror -Wself-assign -pedantic-errors -Wextra-tokens -Wambiguous-member-template -Wbind-to-temporary-copy -fdiagnostics-print-source-range-info -fcolor-diagnostics -fdiagnostics-show-template-tree -ferror-limit=33 -ftemplate-backtrace-limit=13
+#
+#
+CXXFLAGS=-ggdb3 -O0 -std=c++17 -Werror -Wself-assign -pedantic-errors -Wextra-tokens -Wambiguous-member-template -Wbind-to-temporary-copy -fdiagnostics-print-source-range-info -fcolor-diagnostics -fdiagnostics-show-template-tree -ferror-limit=33 -ftemplate-backtrace-limit=13
 
 # flags for the CPP  PreProcessor
 CPPFLAGS =
@@ -23,7 +24,7 @@ AM_CXXFLAGS =
 CXXCOMPILE =
 
 # The command used to actually link a C++ program
-CXXLINK = -lc++abi -lm -ldl -latomic -lglut -lglfw -lX11 -lGL -lGLEW -lGLU
+CXXLINK = -lc++abi -lm -ldl -latomic -lglut -lglfw -lX11 -lGL -lGLEW -lGLU -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lpthread -l:libmagic.so.1
 
 # name for executable
 EXE = main
