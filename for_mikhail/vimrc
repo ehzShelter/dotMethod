@@ -1,0 +1,140 @@
+set nocompatible
+" long live vim
+set encoding=utf-8
+set secure
+" When writing buffer encoding to utf-8
+set fileencoding=utf-8
+set ff=unix
+" Script Encoding When writing to buffer
+scriptencoding utf-8
+
+filetype plugin indent on
+
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'Chiel92/vim-autoformat'
+Plug 'w0rp/ale'
+Plug 'Valloric/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer' }
+
+
+call plug#end()
+
+" syntax highlighting and auto-indentation
+syntax on
+set infercase
+set ai
+set si
+set nonumber
+
+
+set mouse=a
+
+" word wrapping
+set wrap
+set linebreak
+set nolist
+
+" better tab completion on commands
+set wildmenu
+set wildmode=list:longest,full
+
+
+" Match angle bracket
+set matchpairs+=<:>
+
+set statusline=   " clear the statusline for when vimrc is reloaded
+set statusline+=%-10.3n\                      " buffer number
+set statusline+=%f\                          " file name
+" set statusline=[%t]                        " only current tail filename
+set statusline=[%F]                        " full path name
+set statusline+=(%n)                         " show the number of buffer
+set statusline+=%{HasPaste()}
+set statusline+=%h%m%r%w                     " flags
+set statusline+=[%{strlen(&ft)?&ft:'none'}]  " filetype
+set statusline+=%=                           " right align
+set statusline+=%{synIDattr(synID(line('.'),col('.'),1),'name')}\  " highlight
+set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
+" Returns true if paste mode is enabled
+function! HasPaste()
+  if &paste
+    return 'PASTEmode'
+  endif
+  return ''
+endfunction
+
+set noautowrite
+
+" Indenting PARADIGM
+
+set autoindent                              "Retain indentation on next line
+set smartindent                             "Turn on autoindenting of blocks
+
+
+" Remove ALL autocommands to prevent them from being loaded twice.
+if has('autocmd')
+  autocmd!
+endif
+
+" We love syntax highlighting.
+if has('syntax')
+  syntax enable
+endif
+
+" automatically create undo directory for persistent undo AWESOME
+let vimDir = '$HOME/.vim'
+let &runtimepath.=','.vimDir
+
+" Keep undo history across sessions by storing it in a file
+if has('persistent_undo')
+  let myUndoDir = expand(vimDir . '/tmp')
+  " Create dirs
+  call system('mkdir ' . vimDir)
+  call system('mkdir ' . myUndoDir)
+  let &undodir = myUndoDir
+  set undofile
+endif
+
+" view director for save your previous view
+let myViewDir = expand(vimDir . '/view')
+" Create dirs
+call system('mkdir ' . vimDir)
+call system('mkdir ' . myViewDir)
+let &viewdir = myViewDir
+
+" store all view files here
+set viewdir=~/.vim/view
+
+" Elephant
+" YCM Vim
+augroup load_ycm
+  autocmd!
+  autocmd CursorHold, CursorHoldI * :packadd YouCompleteMe
+                                \ | autocmd! load_ycm
+augroup END
+
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_min_num_of_chars_for_completion = 1
+let g:ycm_seed_identifiers_with_syntax = 1
+let g:ycm_complete_in_comments = 1
+let g:ycm_complete_in_strings = 1
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+" let g:ycm_filetype_blacklist = {}
+
+let g:ycm_filetype_blacklist = {
+      \ 'tagbar': 1,
+      \ 'qf': 1,
+      \ 'notes': 1,
+      \ 'markdown': 1,
+      \ 'unite': 1,
+      \ 'text': 1,
+      \ 'vimwiki': 1,
+      \ 'pandoc': 1,
+      \ 'infolog': 1,
+      \ 'mail': 1
+      \}
